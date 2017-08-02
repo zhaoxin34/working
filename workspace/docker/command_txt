@@ -1,0 +1,10 @@
+启动服务：	up	{service_name|EMPTY}
+停止服务：	stop	{service_name|EMPTY}
+重新启动服务：	restart	{service_name|EMPTY}
+删除服务：	rm	{service_name|EMPTY}
+运行服务：	exec	{service_name|EMPTY} {command}
+查看配置：	config
+查看日志：	logs	[-f] {service_name}
+查看进程：	ps
+查看进程：	top
+在服务中执行：	service {service_name}
