@@ -1,0 +1,3 @@
+Git Pull:	pull
+Git Push:	push
+Git Add,Commit,push:	acp 	{"message"}

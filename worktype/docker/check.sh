@@ -2,7 +2,8 @@
 
 # 判断这个目录是否是docker目录
 if [ -f docker-compose.yml ]; then
-	exit 0
+	print_service_list
+	return 0
 else
-	exit 1
+	return 1
 fi

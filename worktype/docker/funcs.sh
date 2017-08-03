@@ -69,7 +69,7 @@ function service() {
 		printf "Select A Command To Run In [\e[1;32m%s\e[0m]\n" "$service_name"
 		# cat $DIR/service/$service_name/cmd_list| awk '{printf "\t%s. \033[1;32m%s\033[39m\n", NR, $0}'
 		echo -e "\t0. exit"
-		cat $DIR/service/$service_name/cmd_list| awk '{printf "\t%s. %s\n", NR, $0}'
+		cat $(pwd)/service/$service_name/cmd_list| awk '{printf "\t%s. %s\n", NR, $0}'
 		command_n=""
 	    read command_n
 	    case ${command_n%% *} in
@@ -79,7 +79,7 @@ function service() {
 	    esac
 	    echo_green "****************************************************************************"
 
-		command=`cat $DIR/service/$service_name/cmd_list| awk '{if(NR=='$command_n') {printf $0} }'`
+		command=`cat $(pwd)/service/$service_name/cmd_list| awk '{if(NR=='$command_n') {printf $0} }'`
 		command="docker-compose exec $service_name $command"
 		__echo_command $command
 		$command
