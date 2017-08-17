@@ -1,10 +1,14 @@
 #!/bin/bash
 #
 # bash index.sh -p [PROFILE] -w [WORKSPACE] [TASK]
+#
+# 下次迭代目标
+# 1 unset 不用的function
+# 2 可以tab提示出命令
 
 # shell的目录
 DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
-workspace_list_file=~/.workspace_list_file
+WORKSPACE_LIST_FILE=~/.workspace_list_file
 
 # 引用所有 function
 if [ -d $DIR/funcs ]; then
@@ -52,7 +56,13 @@ myread() {
     read -e -p ":" $1
     history -s ${!1}
 }
-trap 'history -a;history -w;exit' 0 1 2 3 6
+trap 'trap_exit' 0 1 2 3 6
+
+function trap_exit() {
+	# 如果报错了，那边继续执行
+	[ $? -eq 1 ] && return
+	history -a;history -w;exit
+}
 
 
 while myread line; do

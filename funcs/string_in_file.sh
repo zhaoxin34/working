@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function string_inf_file() {
+function string_in_file() {
 	file=$1
 	str=$2
 	[ ! -f $file ] && return 0

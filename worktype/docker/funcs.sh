@@ -85,3 +85,10 @@ function service() {
 		$command
 	done
 }
+
+function ssh() {
+	[ -z "$1" ] && echo_red "Use: ssh {service_name}" && return 1
+	command="docker-compose exec $1 /bin/bash"
+	__echo_command "$command"
+	$command
+}
