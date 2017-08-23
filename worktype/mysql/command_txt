@@ -1,0 +1,9 @@
+列出所有服务:	list
+使用服务:	use
+连接mysql:	connect
+List Database:	ld
+List Table:	lt
+Add Column:	add_column
+Drop Column:	drop_column
+Show Create Scheme:	show_create	{|table_name}
+Show Column:	show_column	{|table_name}

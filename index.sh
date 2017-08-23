@@ -10,6 +10,9 @@
 DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 WORKSPACE_LIST_FILE=~/.workspace_list_file
 
+CONFIG_DIR=~/.workspace_config
+[ ! -d $CONFIG_DIR ] && mkdir -p $CONFIG_DIR
+
 # 引用所有 function
 if [ -d $DIR/funcs ]; then
     for f in `ls $DIR/funcs|grep '\.sh'`; do
@@ -52,7 +55,7 @@ history -c
 history -r
 
 myread() {
-	printf "${USER}@${HOSTNAME}[\e[1;32m%s\e[0m] `pwd`\n" "$PROFILE"
+	printf "${USER}@${HOSTNAME}[\e[1;32m%s\e[0m] \e[1;33m%s\e[0m `pwd`\n" "$PROFILE" "($ps2)"
     read -e -p ":" $1
     history -s ${!1}
 }

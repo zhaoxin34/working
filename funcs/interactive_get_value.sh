@@ -5,6 +5,7 @@ function get_input_and_write_to_file() {
 	default=$2
     value=""
 	file=$4
+    auto=$5
     [ -f $file ] && value=`cat $file`
     [ -z "$value" ] && value=$default
     printf "$msg" "$value"

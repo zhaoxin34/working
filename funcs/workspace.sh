@@ -30,13 +30,12 @@ function select_workspace() {
 	done
 }
 
-
 # 设置工作区
 function set_workspace() {
 	name=$1
 	WORKSPACE="$(pwd)"
 
-	full_name="$WORKSPACE||$name"
+	full_name="$WORKSPACE;$name"
 	string_in_file $WORKSPACE_LIST_FILE "$full_name"
 	# 如果命令不在workspace里面，那么就写进去
 	[ $? -eq 0 ] && echo "$full_name" >> $WORKSPACE_LIST_FILE

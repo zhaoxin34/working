@@ -1,14 +1,14 @@
 #!/bin/bash
 
 function sw() {
-	set_workspace
+	set_workspace $*
 }
 
 function lw() {
-	select_workspace
+	select_workspace $*
 	cd $WORKSPACE && after_cd
 }
 
 function h() {
-	worktype
+	worktype $*
 }
