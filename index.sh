@@ -24,7 +24,7 @@ fi
 shopt -s expand_aliases
 # alias cd="cd && new_cd"
 #############################################################
-. common/command-line.sh
+. $DIR/common/command-line.sh
 
 # 如果环境变量和参数中都没有profile，那么选择一个
 [ -z "$PROFILE" ] && select_profile
