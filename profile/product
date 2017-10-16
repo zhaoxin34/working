@@ -1,0 +1,5 @@
+export PROFILE=product
+export LISTEN_IP=
+export LISTEN_IP_COLON=
+export DOCKER_REPO=
+export MAVEN_REPO=

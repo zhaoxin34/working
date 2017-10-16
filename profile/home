@@ -1,3 +1,4 @@
+export PROFILE=home
 export LISTEN_IP=192.168.1.102
 export LISTEN_IP_COLON=${LISTEN_IP}:
 export DOCKER_REPO=
