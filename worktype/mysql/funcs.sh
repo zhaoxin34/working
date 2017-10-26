@@ -73,7 +73,7 @@ function add_column() {
 	while [ -z "$y_or_n" ]; do
 		printf "The Sql is \e[33m%s\e[0m: [y/n]\n" "$sql"
 		read y_or_n
-		[ "$y_or_n" == "y" ] && echo $sql|$conn --silent && show_create $table_name
+		[ "$y_or_n" == "y" ] && echo $sql|$conn && show_create $table_name
 	done
 }
 

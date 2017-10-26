@@ -2,4 +2,5 @@ export PROFILE=product
 export LISTEN_IP=
 export LISTEN_IP_COLON=
 export DOCKER_REPO=
-export MAVEN_REPO=
+export MAVEN_REPO=139.224.6.15
+export KAFKA_SERVERS=cdh-slave1:9092,cdh-slave2:9092,cdhmaster:9092
