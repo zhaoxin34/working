@@ -25,21 +25,25 @@ function __create_gulp_docker() {
 
 function init() {
 	echo_yellow "Init Gulp:"
+	# 截取/后的目录作为工程名
+	project_name=$(pwd)
+	project_name=${project_name##*/}
+
 	get_input_and_write_to_file \
 	'Input Gulp Dest Dir:[\e[1;32m%s\e[0m]? [ENTER]|Input New One [ENTER]\n' \
-	"../dest" \
-	gulp_dest_dir $CONFIG_DIR/gulp_dest_dir
+	"./build" \
+	gulp_dest_dir $CONFIG_DIR/gulp_dest_dir_${project_name}
 
 	get_input_and_write_to_file \
 	'Input Gulp Docker Name:[\e[1;32m%s\e[0m]? [ENTER]|Input New One [ENTER]\n' \
 	"gulp_name" \
-	gulp_docker_name $CONFIG_DIR/gulp_docker_name
+	gulp_docker_name $CONFIG_DIR/gulp_docker_name_${project_name}
 	ps2=$gulp_docker_name
 
 	get_input_and_write_to_file \
 	'Input Gulp Docker Port:[\e[1;32m%s\e[0m]? [ENTER]|Input New One [ENTER]\n' \
 	"3000" \
-	gulp_docker_port $CONFIG_DIR/gulp_docker_port
+	gulp_docker_port $CONFIG_DIR/gulp_docker_port_${project_name}
 
 	mkdir -p $gulp_dest_dir
 	src_dir=$(pwd)

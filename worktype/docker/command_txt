@@ -6,6 +6,7 @@
 运行服务：	exec	{service_name|EMPTY} {command}
 查看配置：	config
 查看日志：	logs	[-f] {service_name}
+查看日志：	logf {service_name}
 查看进程：	ps
 查看进程：	top
 在服务中执行：	service {service_name}

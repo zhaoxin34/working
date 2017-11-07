@@ -50,6 +50,10 @@ function logs() {
 	docker-compose logs $*
 }
 
+function logf() {
+	docker-compose logs -f --tail 100 $*
+}
+
 function ps() {
 	command="docker ps"
 	__echo_command "$command"
