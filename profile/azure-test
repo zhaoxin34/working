@@ -5,3 +5,6 @@ export DOCKER_REPO=
 export MAVEN_REPO=139.224.6.15
 export DIP_REDIS=10.1.1.16
 export DIP_MYSQL=52.80.56.135
+export JAVA_OPT_Xmn=256m
+export JAVA_OPT_Xms=1024m
+export JAVA_OPT_Xmx=2048m
