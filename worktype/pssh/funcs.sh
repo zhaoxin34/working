@@ -1,24 +1,20 @@
 #!/bin/bash
-# list connection
-pssh=""
 
+docker_name=pssh-instance
 # 使用数据库
-function use() {
-	pssh=$1
-	if [ -z "$pssh" ]; then
-		list
-		get_input_and_write_to_file \
-		'Input Pssh Service Name:[\e[1;32m%s\e[0m]? [ENTER]|Input New One [ENTER]\n' \
-		"" \
-		pssh $CONFIG_DIR/pssh
+function connect() {
+	y_or_n=""
+	while [ -z "$y_or_n" ]; do
+		echo "Remove Old Container? [y/n]"
+		read y_or_n
+		[ "$y_or_n" == "y" ] && docker stop $docker_name && docker rm $docker_name
+	done
+	c=`docker ps -a|grep $docker_name|wc -l`
+	if [ $c -eq 0 ]; then
+		docker run -it -h pssh --name $docker_name -v $(pwd):/root/ pssh /bin/bash
+	else
+		docker restart $docker_name && docker exec -it $docker_name /bin/bash
 	fi
-
-	ps2="pssh=$pssh"
-	echo_green "Host List:"
-	cat $pssh/hosts
-	echo_green "Args:"
-	cat $pssh/args
-	docker run -it --rm -v $(pwd)/$pssh:/root/ pssh /bin/bash
 }
 
 function list() {
@@ -26,3 +22,4 @@ function list() {
 }
 
 list
+connect

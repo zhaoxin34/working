@@ -1,3 +1,1 @@
-列出所有服务:	list
-使用服务:	use
-运行命令: exec	{command}
+连接pssh服务器:	connect

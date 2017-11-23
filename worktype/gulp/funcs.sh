@@ -16,7 +16,7 @@ function __create_gulp_docker() {
 	num=$(docker ps -a | grep $docker_name | wc -l)
 	if [ $num -eq 0 ]; then
 		echo_green "docker creating ..."
-		docker run -it --name $docker_name -v $src_dir:/root/working/src -v $dest_dir:/root/working/dest -p $port:$port -d gulp
+		docker run -it --name $docker_name -v $src_dir:/root/working/src -v $dest_dir:/root/working/dest -p $port -d gulp
 	else
 		echo_green "docker restarting ..."
 		docker restart $docker_name
