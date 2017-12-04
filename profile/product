@@ -1,6 +1,6 @@
 export PROFILE=product
 export HOST_IP=10.1.1.24
-export LISTEN_IP=
+export LISTEN_IP=10.1.1.24
 export LISTEN_IP_COLON=
 export DOCKER_REPO=10.1.1.24:5000/
 export MAVEN_REPO=10.1.1.24
