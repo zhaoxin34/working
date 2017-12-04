@@ -1,4 +1,4 @@
-export PROFILE=product
+export PROFILE=product_web-server
 export HOST_IP=
 export LISTEN_IP=10.1.1.22
 export LISTEN_IP_COLON=
