@@ -1,0 +1,12 @@
+export PROFILE=product
+export HOST_IP=
+export LISTEN_IP=10.1.1.22
+export LISTEN_IP_COLON=
+export DOCKER_REPO=10.1.1.24:5000/
+export MAVEN_REPO=10.1.1.24
+export KAFKA_SERVERS=cdh-slave1:9092,cdh-slave2:9092,cdhmaster:9092
+export DIP_REDIS=1.1.1.1
+export DIP_MYSQL=1.1.1.1
+export JAVA_OPT_Xmn=128m
+export JAVA_OPT_Xms=512m
+export JAVA_OPT_Xmx=1024m
