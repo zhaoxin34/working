@@ -1,6 +1,6 @@
-export PROFILE=office
-export LISTEN_IP=127.0.0.1
-export LISTEN_IP_COLON=${LISTEN_IP}:
-export DOCKER_REPO=
-export MAVEN_REPO=192.168.0.200
-export KAFKA_SERVERS=datatist-centos00:9092,datatist-centos01:9092,datatist-centos02:9092
+PROFILE=office
+LISTEN_IP=127.0.0.1
+LISTEN_IP_COLON=${LISTEN_IP}:
+DOCKER_REPO=
+MAVEN_REPO=192.168.0.200
+KAFKA_SERVERS=datatist-centos00:9092,datatist-centos01:9092,datatist-centos02:9092

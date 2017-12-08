@@ -1,16 +1,25 @@
 ############################################################
 # define up function
+
+PROFILE_FILE=profile/$PROFILE
+[ -f $PROFILE_FILE ] || echo_red "ENV File \"$PROFILE_FILE\" Not Exists!!!"
+echo_green "Profile File:"
+cat $PROFILE_FILE
+. $PROFILE_FILE
+
+COMPOSE_ARGS=""
+
 function __echo_command() {
 	printf "running >>>>> \e[32m[%s]\e[0m\n" "$*"
 }
 function up() {
-	command="docker-compose up -d $1"
+	command="docker-compose $COMPOSE_ARGS up -d $1"
 	__echo_command "$command"
 	$command
 }
 
 function restart() {
-	command="docker-compose restart $1"
+	command="docker-compose $COMPOSE_ARGS restart $1"
 	__echo_command "$command"
 	$command
 
@@ -19,7 +28,7 @@ function restart() {
 ############################################################
 # define stop function
 function stop() {
-	command="docker-compose stop $1"
+	command="docker-compose $COMPOSE_ARGS stop $1"
 	__echo_command "$command"
 	$command
 }
@@ -27,7 +36,7 @@ function stop() {
 ############################################################
 # define remove function
 function rm() {
-	command="docker-compose rm $1"
+	command="docker-compose $COMPOSE_ARGS rm $1"
 	__echo_command "$command"
 	$command
 }
@@ -35,33 +44,37 @@ function rm() {
 ############################################################
 # define remove function
 function exec() {
-	command="docker-compose exec $*"
+	command="docker-compose $COMPOSE_ARGS exec $*"
 	__echo_command "$command"
 	$command
 }
 
 function config() {
-	command="docker-compose config"
+	command="docker-compose $COMPOSE_ARGS config"
 	__echo_command "$command"
 	$command
 }
 
 function logs() {
-	docker-compose logs $*
+	command="docker-compose $COMPOSE_ARGS logs $*"
+	__echo_command "$command"
+	$command
 }
 
 function logf() {
-	docker-compose logs -f --tail 100 $*
+	command="docker-compose $COMPOSE_ARGS logs -f --tail 100 $*"
+	__echo_command "$command"
+	$command
 }
 
 function ps() {
-	command="docker ps"
+	command="docker ps $*"
 	__echo_command "$command"
 	$command
 }
 
 function top() {
-	command="docker-compose top"
+	command="docker-compose $COMPOSE_ARGS top"
 	__echo_command "$command"
 	$command
 }
