@@ -30,12 +30,12 @@ shopt -s expand_aliases
 [ -z "$PROFILE" ] && select_profile
 ############################################################
 # echo profile and export profile
-# if [ -f $DIR/profile/$PROFILE ]; then
-# 	. $DIR/profile/$PROFILE
-# else
-# 	echo_red "Not Found Profile: $DIR/profile/$PROFILE"
-# 	exit 1
-# fi
+if [ -f $DIR/profile/$PROFILE ]; then
+	. $DIR/profile/$PROFILE
+else
+	echo_yellow "Not Found Profile: $DIR/profile/$PROFILE"
+	# exit 1
+fi
 clear
 print_profile
 
