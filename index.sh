@@ -32,12 +32,12 @@ shopt -s expand_aliases
 # echo profile and export profile
 if [ -f $DIR/profile/$PROFILE ]; then
 	. $DIR/profile/$PROFILE
+	print_profile
 else
 	echo_yellow "Not Found Profile: $DIR/profile/$PROFILE"
 	# exit 1
 fi
 clear
-print_profile
 
 ############################################################
 # 获得 workspace 列表
