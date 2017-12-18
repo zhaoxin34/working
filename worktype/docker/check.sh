@@ -7,6 +7,7 @@ if [ -f docker-compose.yml ]; then
 	echo_green "Profile File:"
 	cat $PROFILE_FILE
 	. $PROFILE_FILE
+	echo_green "Service List:"
 	# print_service_lis
 	docker-compose config --services
 	return 0
