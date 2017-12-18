@@ -1,11 +1,6 @@
 ############################################################
 # define up function
 
-PROFILE_FILE=profile/$PROFILE
-[ -f $PROFILE_FILE ] || echo_red "ENV File \"$PROFILE_FILE\" Not Exists!!!"
-echo_green "Profile File:"
-cat $PROFILE_FILE
-. $PROFILE_FILE
 
 COMPOSE_ARGS=""
 
