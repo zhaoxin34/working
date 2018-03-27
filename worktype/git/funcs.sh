@@ -18,3 +18,7 @@ function branch() {
 	[ -z "$branch_name" ] && echo_red "Usage: branch {branch name}" && return
 	git branch $branch_name && git checkout && git push --set-upstream origin $branch_name
 }
+
+function glog() {
+	git log --pretty=format:"%h %ar %cn %s" --graph
+}
