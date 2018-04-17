@@ -12,3 +12,7 @@ function lw() {
 function h() {
 	worktype $*
 }
+
+function ll() {
+	ls -l
+}
