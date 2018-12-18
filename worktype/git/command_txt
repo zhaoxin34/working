@@ -1,3 +1,5 @@
 Git Pull:	pull
 Git Push:	push
 Git Add,Commit,push:	acp 	{"message"}
+Show GitLog Pretty:	glog
+Git Short Hash:	gShortHash

@@ -1,1 +1,2 @@
 初始化服务：	init
+停止docker：	stop

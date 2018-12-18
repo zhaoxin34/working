@@ -65,4 +65,9 @@ function npm() {
 	docker exec -it $gulp_docker_name cnpm $*
 }
 
+function stop() {
+	echo 'docker stop $gulp_docker_name'
+	docker stop $gulp_docker_name
+}
+
 init
